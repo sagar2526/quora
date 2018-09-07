@@ -9,4 +9,4 @@ var statSchema = new mongoose.Schema({
 
 var Stat = mongoose.model('Stat', statSchema);
 
-module.export = Stat;
+module.exports = Stat;
