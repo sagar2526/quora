@@ -12,6 +12,7 @@ const userController = require('./controllers/user')
 const questionController = require('./controllers/question')
 const answerController = require('./controllers/answer')
 const statController = require('./controllers/stat')
+const blogController = require('./controllers/blog')
 
 var app = express();
 
@@ -47,6 +48,11 @@ app.get('/api/v1/stats',statController.getAllStats)
 app.post('/api/v1/stats', statController.postNewStat)
 app.put('/api/v1/stats/:id', statController.updateStatById)
 app.delete('/api/v1/stats/:id', statController.delStatById)
+
+app.get('/api/v1/blogs',blogController.getAllBlogs)
+app.post('/api/v1/blogs', blogController.postNewBlogs)
+app.put('/api/v1/blogs/:id', blogController.updateBlogsById)
+app.delete('/api/v1/blogs/:id', blogController.delBlogsById)
 
 
 app.listen(4040, () => console.log('Express server at 4040'))
